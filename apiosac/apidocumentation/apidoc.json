@@ -1,0 +1,9 @@
+{
+    "name": "REST API OSAC",
+    "version": "0.1.0",
+    "description": "API Documentation OSAC",
+    "apidoc": {
+      "title": "",
+      "url" : "http://localhost/digiponic/osac/api"
+    }
+  }

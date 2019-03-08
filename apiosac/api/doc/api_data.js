@@ -1,0 +1,116 @@
+define({ "api": [
+  {
+    "type": "GET",
+    "url": "/merek",
+    "title": "1. All data merek",
+    "version": "0.1.0",
+    "name": "getMerek",
+    "group": "Kendaraan",
+    "permission": [
+      {
+        "name": "public"
+      }
+    ],
+    "examples": [
+      {
+        "title": "How to use:",
+        "content": "http://localhost/digiponic/osac/apiosac/api/merek",
+        "type": "json"
+      }
+    ],
+    "filename": "./example.js",
+    "groupTitle": "Kendaraan"
+  },
+  {
+    "type": "GET",
+    "url": "/merek",
+    "title": "2. Sub data merek",
+    "version": "0.1.0",
+    "name": "getSubMerek",
+    "group": "Kendaraan",
+    "permission": [
+      {
+        "name": "public"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Use ID from Merek.</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "How to use:",
+        "content": "http://localhost/digiponic/osac/apiosac/api/merek?id_merek=id",
+        "type": "json"
+      }
+    ],
+    "filename": "./example.js",
+    "groupTitle": "Kendaraan"
+  },
+  {
+    "type": "GET",
+    "url": "/tipe",
+    "title": "1. All data",
+    "version": "0.1.0",
+    "name": "getTipe",
+    "group": "Tipe",
+    "permission": [
+      {
+        "name": "public"
+      }
+    ],
+    "examples": [
+      {
+        "title": "How to use:",
+        "content": "http://localhost/digiponic/osac/apiosac/api/tipe",
+        "type": "json"
+      }
+    ],
+    "filename": "./example.js",
+    "groupTitle": "Tipe"
+  },
+  {
+    "type": "GET",
+    "url": "/tipe",
+    "title": "2. Sub data",
+    "version": "0.1.0",
+    "name": "getTipeSubData",
+    "group": "Tipe",
+    "permission": [
+      {
+        "name": "public"
+      }
+    ],
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "Integer",
+            "optional": false,
+            "field": "id",
+            "description": "<p>Use ID from Tipe.</p>"
+          }
+        ]
+      }
+    },
+    "examples": [
+      {
+        "title": "How to use:",
+        "content": "http://localhost/digiponic/osac/apiosac/api/tipe?id_tipe=id",
+        "type": "json"
+      }
+    ],
+    "filename": "./example.js",
+    "groupTitle": "Tipe"
+  }
+] });
