@@ -21,6 +21,8 @@ $router->get('/service', 'ServiceController@data');
 $router->post('/transaction', 'TransactionController@post');
 $router->get('/transaction/show', 'TransactionController@getAllTransactions');
 $router->get('/generals', 'GeneralsController@data');
+$router->get('/cabang', 'CabangController@getData');
+$router->get('/cabang/masuk', 'CabangController@getDataMasuk');
 $router->get('/report', 'ReportController@data');
 
 $router->group(['prefix' => 'merek'], function () use ($router) {

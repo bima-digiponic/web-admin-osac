@@ -43,9 +43,9 @@
 			$this->form[] = ['label'=>'No Telp','name'=>'telfon','type'=>'text','validation'=>'required|min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Logo','name'=>'logo','type'=>'upload','validation'=>'required','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'required|min:1|max:255|email|unique:tb_cabang','width'=>'col-sm-10','placeholder'=>'Mohon input alamat email dengan benar'];
-			$this->form[] = ['label'=>'Pin','name'=>'pin','type'=>'password','value'=>'12345','validation'=>'min:3|max:32','width'=>'col-sm-10','help'=>'Default "12345". Minimal 5 karakter. Tinggalkan jika anda tidak mengubahnya'];
-			$this->form[] = ['label'=>'Latitude','name'=>'lang','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Longitude','name'=>'long','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Pin','name'=>'pin','type'=>'text','value'=>'12345','validation'=>'min:3|max:32','width'=>'col-sm-10','help'=>'Default "12345". Minimal 5 karakter. Tinggalkan jika anda tidak mengubahnya'];
+			$this->form[] = ['label'=>'Latitude','name'=>'latt','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Longitude','name'=>'lang','type'=>'text','validation'=>'min:1|max:255','width'=>'col-sm-10'];
 			$this->form[] = ['label'=>'Provinsi','name'=>'kode_provinsi','type'=>'select','validation'=>'required','width'=>'col-sm-10','datatable'=>'tb_provinsi,keterangan'];
 			$this->form[] = ['label'=>'Kota','name'=>'kode_kota','type'=>'select','validation'=>'required','width'=>'col-sm-10','datatable'=>'tb_kota,keterangan','parent_select'=>'kode_provinsi'];
 			$this->form[] = ['label'=>'Kecamatan','name'=>'kode_kecamatan','type'=>'select','validation'=>'required','width'=>'col-sm-10','datatable'=>'tb_kecamatan,keterangan','parent_select'=>'kode_kota'];
