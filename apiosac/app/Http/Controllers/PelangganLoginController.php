@@ -55,14 +55,9 @@ class PelangganLoginController extends Controller
         $param = $request->json()->all();
          unset($param['email'],$param['phone']);
 
-        $data = DB::table('tb_customer')->where('id',$id)->update([
-            'name'         => $request->json()->get('name'),
-            'address'      => $request->json()->get('address'),
-            'nomor_polisi' => $request->json()->get('nomor_polisi'),
-            'nomor_rangka' => $request->json()->get('nomor_rangka'),
-            'nomor_mesin'  => $request->json()->get('nomor_mesin'),
-            'password'     => $request->json()->get('password'),
-        ]);
+        $new = DB::table('tb_customer')->update($param);
+        $data = DB::table('tb_customer')->where('id',$new)->first();
+        $data = json_decode(json_encode($data), true);
         $status = ($data) ? true : false;
         $msg = array(
             'status' => $status,
@@ -70,5 +65,4 @@ class PelangganLoginController extends Controller
         );
         return $msg;
     }
-
 }
