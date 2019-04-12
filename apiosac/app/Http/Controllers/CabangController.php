@@ -20,8 +20,9 @@ class CabangController extends Controller
     
     public function getData(Request $request)
     {
-       $cabang = $request->input('kecamatan');
-       if(empty($vehicle)){
+       $email = $request->input('email');
+       $pin = $request->input('pin');
+       if(empty($email)){
            $data = DB::table('tb_cabang as cb')
                     ->join('tb_provinsi as pv', 'cb.kode_provinsi', '=', 'pv.id')
                     ->join('tb_kecamatan as kc', 'cb.kode_kecamatan', '=', 'kc.id')
@@ -34,7 +35,8 @@ class CabangController extends Controller
                     ->join('tb_kecamatan as kc', 'cb.kode_kecamatan', '=', 'kc.id')
                     ->join('tb_kota as kt', 'cb.kode_kota', '=', 'kt.id')
                     ->select('cb.*', 'pv.keterangan as kode_provinsi', 'kc.keterangan as kode_kecamatan', 'kt.keterangan as kode_kota')
-                    ->where('kc.keterangan as kode_kecamatan', $cabang)
+                    ->where('cb.email', $email)
+                    ->where('cb.pin', $pin)
                     ->get(); 
        }
        $count = count($data);
