@@ -50,10 +50,25 @@ class PelangganLoginController extends Controller
         }
         return $data;
     }
-    public function update (Request $request)
+    public function update(Request $request, $id)
     {
         $param = $request->json()->all();
-        
+         unset($param['email'],$param['phone']);
+
+        $data = DB::table('tb_customer')->where('id',$id)->update([
+            'name'         => $request->json()->get('name'),
+            'address'      => $request->json()->get('address'),
+            'nomor_polisi' => $request->json()->get('nomor_polisi'),
+            'nomor_rangka' => $request->json()->get('nomor_rangka'),
+            'nomor_mesin'  => $request->json()->get('nomor_mesin'),
+            'password'     => $request->json()->get('password'),
+        ]);
+        $status = ($data) ? true : false;
+        $msg = array(
+            'status' => $status,
+            'message' => ($status) ? 'Succes' : 'Failed'
+        );
+        return $msg;
     }
 
 }

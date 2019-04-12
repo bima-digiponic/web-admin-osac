@@ -22,8 +22,11 @@ $router->post('/transaction', 'TransactionController@post');
 $router->get('/transaction/show', 'TransactionController@getAllTransactions');
 $router->get('/generals', 'GeneralsController@data');
 $router->get('/cabang', 'CabangController@getData');
+
 $router->get('/pelanggan', 'PelangganLoginController@login');
 $router->post('/pelanggan/register', 'PelangganLoginController@register');
+$router->put('/pelanggan/update/{id}', 'PelangganLoginController@update');
+
 $router->get('/cabang/masuk', 'CabangController@getDataMasuk');
 $router->get('/report', 'ReportController@data');
 
