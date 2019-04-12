@@ -50,5 +50,10 @@ class PelangganLoginController extends Controller
         }
         return $data;
     }
+    public function update (Request $request)
+    {
+        $param = $request->json()->all();
+        
+    }
 
 }
