@@ -30,19 +30,20 @@
 
 			# START COLUMNS DO NOT REMOVE THIS LINE
 			$this->col = [];
-			$this->col[] = ["label"=>"Name","name"=>"name"];
+			$this->col[] = ["label"=>"Name","name"=>"nama"];
 			$this->col[] = ["label"=>"Email","name"=>"email"];
-			$this->col[] = ["label"=>"Address","name"=>"address"];
-			$this->col[] = ["label"=>"Phone","name"=>"phone"];
+			$this->col[] = ["label"=>"Address","name"=>"alamat"];
+			$this->col[] = ["label"=>"Phone","name"=>"nohp"];
 			# END COLUMNS DO NOT REMOVE THIS LINE
 
 			# START FORM DO NOT REMOVE THIS LINE
 			$this->form = [];
-			$this->form[] = ['label'=>'Nama','name'=>'name','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'Anda hanya dapat memasukkan huruf saja'];
+			$this->form[] = ['label'=>'Nama','name'=>'nama','type'=>'text','validation'=>'required|string|min:3|max:70','width'=>'col-sm-10','placeholder'=>'Anda hanya dapat memasukkan huruf saja'];
 			$this->form[] = ['label'=>'Email','name'=>'email','type'=>'email','validation'=>'email|unique:tb_customer','width'=>'col-sm-10','placeholder'=>'Mohon input alamat email dengan benar'];
-			$this->form[] = ['label'=>'Telpon','name'=>'phone','type'=>'number','validation'=>'required|numeric','width'=>'col-sm-10'];
-			$this->form[] = ['label'=>'Telpon Alternatif','name'=>'phone_other','type'=>'number','width'=>'col-sm-10','placeholder'=>'Anda hanya dapat memasukkan angka saja'];
-			$this->form[] = ['label'=>'Alamat','name'=>'address','type'=>'textarea','validation'=>'required','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Telpon','name'=>'nohp','type'=>'number','validation'=>'required|numeric','width'=>'col-sm-10'];
+			$this->form[] = ['label'=>'Telpon Alternatif','name'=>'nohp2','type'=>'number','width'=>'col-sm-10','placeholder'=>'Anda hanya dapat memasukkan angka saja'];
+			$this->form[] = ['label'=>'Detail Kendaraan','name'=>'nohp2','type'=>'number','width'=>'col-sm-10','placeholder'=>'Anda hanya dapat memasukkan angka saja'];
+			$this->form[] = ['label'=>'Alamat','name'=>'alamat','type'=>'textarea','validation'=>'required','width'=>'col-sm-10'];
 			# END FORM DO NOT REMOVE THIS LINE
 
 			# OLD START FORM

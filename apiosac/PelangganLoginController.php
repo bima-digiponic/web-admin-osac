@@ -25,7 +25,7 @@ class PelangganLoginController extends Controller
       if(empty($username) && empty($password)){
           $data = '';
       }else{
-        $data = DB::table('tb_customer_')
+        $data = DB::table('tb_customer')
         ->select('name','email','phone','address','nomor_polisi','nomor_rangka','nomor_mesin')
         ->where('email',$username)
         ->orWhere('phone', $username)
@@ -37,15 +37,15 @@ class PelangganLoginController extends Controller
     public function register(Request $request)
     {
         $param = $request->json()->all();
-        $cek = DB::table('tb_customer_')
+        $cek = DB::table('tb_customer')
                     ->where('email', $param['email'])
                     ->orWhere('phone', $param['phone'])
                     ->exists();
         if($cek){
             $data = 'Ooppss data telah terdaftar';
         }else{
-            $new = DB::table('tb_customer_')->insertGetId($param);
-            $data = DB::table('tb_customer_')->where('id', $new)->first();
+            $new = DB::table('tb_customer')->insertGetId($param);
+            $data = DB::table('tb_customer')->where('id', $new)->first();
             $data = json_decode(json_encode($data), true);
         }
         return $data;
@@ -55,8 +55,8 @@ class PelangganLoginController extends Controller
         $param = $request->json()->all();
          unset($param['email'],$param['phone']);
 
-        $new = DB::table('tb_customer_')->update($param);
-        $data = DB::table('tb_customer_')->where('id',$new)->first();
+        $new = DB::table('tb_customer')->update($param);
+        $data = DB::table('tb_customer')->where('id',$new)->first();
         $data = json_decode(json_encode($data), true);
         $status = ($data) ? true : false;
         $msg = array(
