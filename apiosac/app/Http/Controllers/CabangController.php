@@ -47,8 +47,8 @@ class CabangController extends Controller
     }
     public function getDataMasuk(Request $request)
     {
-        $email = $request->input('email');
-        $pin = $request->input('pin');
+        $email = $request->json()->get('email');
+        $pin = $request->json()->get('pin');
         $data = DB::table('tb_cabang as cb')
         ->join('tb_provinsi as pv', 'cb.kode_provinsi', '=', 'pv.id')
         ->join('tb_kecamatan as kc', 'cb.kode_kecamatan', '=', 'kc.id')
