@@ -65,4 +65,5 @@ class PelangganLoginController extends Controller
         );
         return $msg;
     }
+
 }

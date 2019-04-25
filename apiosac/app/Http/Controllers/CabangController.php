@@ -20,8 +20,8 @@ class CabangController extends Controller
     
     public function getData(Request $request)
     {
-       $email = $request->input('email');
-       $pin = $request->input('pin');
+       $email = $request->json()->get('email');
+       $pin = $request->json()->get('pin');
        if(empty($email)){
            $data = DB::table('tb_cabang as cb')
                     ->join('tb_provinsi as pv', 'cb.kode_provinsi', '=', 'pv.id')
